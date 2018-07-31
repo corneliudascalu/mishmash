@@ -6,7 +6,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        gradlePluginPortal()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:$gradleVersion")
@@ -21,8 +20,6 @@ allprojects {
     }
 }
 
-tasks {
-    "clean"(Delete::class) {
-        delete(rootDir)
-    }
+task<Delete>("clean") {
+    delete(rootDir)
 }
